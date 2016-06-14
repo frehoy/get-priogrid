@@ -76,7 +76,7 @@ for i, row in df_vars.iterrows():
         print("dumping to ", filename, end="...")
         json.dump(obj,f)
         print("done!")
-apitime = datetime.now()
+apitime = datetime.datetime.now()
 print("All data downloaded and stored in ./jsons/ folder, API time: ", apitime-start)
 
 
@@ -101,7 +101,7 @@ for filename in os.listdir('./jsons/'):
     print(" merged shape: ", df_merged.shape, " done!")
 
 print("Done!")
-mergetime = datetime.now()
+mergetime = datetime.datetime.now()
 print("Total time :", mergetime - start)
 print("API time: ", apitime - start)
 print("Merge time: ", mergetime - apitime)
