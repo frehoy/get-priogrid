@@ -86,7 +86,6 @@ print("Starting merge.")
 df_merged = df_gy
 #iterate over all the saves jsons    
 for filename in os.listdir('./jsons/'):
-    print("###############################################")
     path='./jsons/'+filename
     #load the json into obj
     with open (path, 'r') as f:
