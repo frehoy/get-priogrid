@@ -1,7 +1,6 @@
 
 # coding: utf-8
 
-# In[ ]:
 
 import requests
 import pandas as pd
@@ -10,7 +9,6 @@ import datetime
 import os
 
 
-# In[ ]:
 
 print("Starting.")
 start = datetime.datetime.now()
@@ -21,7 +19,6 @@ df_grid = pd.read_json(path_or_buf=gridurl)
 print("done")
 
 
-# In[ ]:
 
 #make df_gy as a skeleton df for which to left-merge into
 print("Making year list", end="...")
@@ -36,7 +33,6 @@ for year in yearlist:
 print("done")
 
 
-# In[ ]:
 
 #make df_vars containing id and name for the variables, excluding those that give API errors
 varurl = "http://grid.prio.org/api/variables"
@@ -50,7 +46,6 @@ df_vars = df_vars[~df_vars['name'].isin(excludelist)]
 print("done")
 
 
-# In[ ]:
 
 #fetch the data from grid.prio.org/api one variable at a time
 #store each variable in json file named after the variable id number in subfolder jsons
@@ -80,7 +75,6 @@ apitime = datetime.datetime.now()
 print("All data downloaded and stored in ./jsons/ folder, API time: ", apitime-start)
 
 
-# In[ ]:
 
 print("Starting merge.")
 df_merged = df_gy
